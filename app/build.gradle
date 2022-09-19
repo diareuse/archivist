@@ -1,0 +1,15 @@
+plugins {
+    id "app-conventions"
+}
+
+application {
+    mainClass = "wiki.depasquale.spotify.App"
+}
+
+dependencies {
+    implementation 'org.slf4j:slf4j-api:2.0.1'
+    implementation 'org.slf4j:slf4j-simple:2.0.1'
+    implementation "se.michaelthelin.spotify:spotify-web-api-java:7.2.0"
+    implementation 'com.google.dagger:dagger:2.43.2'
+    kapt 'com.google.dagger:dagger-compiler:2.43.2'
+}
