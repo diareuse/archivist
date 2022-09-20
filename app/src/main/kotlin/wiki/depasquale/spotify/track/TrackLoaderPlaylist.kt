@@ -22,7 +22,7 @@ class TrackLoaderPlaylist(
         }
         for ((year, tracks) in yearRanked) {
             val playlist = playlistLoader.forYear(year)
-            playlistInserter.insertInto(playlist, tracks.map { it.uri })
+            playlistInserter.insertInto(playlist, tracks)
         }
     }
 
