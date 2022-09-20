@@ -1,9 +1,13 @@
 package wiki.depasquale.spotify.playlist
 
-class PlaylistLoaderNoop : PlaylistLoader {
+import org.slf4j.Logger
+
+class PlaylistLoaderNoop(
+    private val log: Logger
+) : PlaylistLoader {
 
     override fun forYear(year: Int): PlaylistId {
-        println("Requested to create or fetch playlist(name=$year)")
+        log.info("Requested to create or fetch playlist(name=$year)")
         return "playlist-for-$year"
     }
 

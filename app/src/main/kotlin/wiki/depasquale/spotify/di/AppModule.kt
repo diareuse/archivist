@@ -2,6 +2,8 @@ package wiki.depasquale.spotify.di
 
 import dagger.Module
 import dagger.Provides
+import org.slf4j.Logger
+import org.slf4j.LoggerFactory
 import se.michaelthelin.spotify.SpotifyApi
 import se.michaelthelin.spotify.SpotifyHttpManager
 import wiki.depasquale.spotify.SpotifyApp
@@ -42,6 +44,11 @@ class AppModule {
         loader: TrackLoader
     ): SpotifyApp {
         return SpotifyApp(api, manager, loader)
+    }
+
+    @Provides
+    fun logger(): Logger {
+        return LoggerFactory.getLogger("Archivist")
     }
 
 }
