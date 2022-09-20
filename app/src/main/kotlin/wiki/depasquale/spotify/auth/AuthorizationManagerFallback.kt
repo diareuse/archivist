@@ -7,7 +7,6 @@ class AuthorizationManagerFallback(
 
     override fun getProperties(): AuthProperties = primary
         .runCatching { getProperties() }
-        .onFailure { it.printStackTrace() }
         .recover { fallback.getProperties() }
         .getOrThrow()
 
