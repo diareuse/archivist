@@ -19,6 +19,7 @@ class PlaylistModule {
             true -> PlaylistInserterNoop()
             else -> PlaylistInserterImpl(api)
         }
+        inserter = PlaylistInserterIgnoreEmpty(inserter)
         inserter = PlaylistInserterRemovingSaved(inserter, manager)
         return inserter
     }

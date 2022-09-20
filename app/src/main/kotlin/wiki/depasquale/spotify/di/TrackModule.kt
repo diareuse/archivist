@@ -31,6 +31,7 @@ class TrackModule {
             true -> TrackManagerNoop()
             else -> TrackManagerImpl(api)
         }
+        manager = TrackManagerIgnoreEmpty(manager)
         manager = TrackManagerSplitting(manager)
         return manager
     }
