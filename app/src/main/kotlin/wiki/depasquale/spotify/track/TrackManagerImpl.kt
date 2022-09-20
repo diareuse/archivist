@@ -7,7 +7,7 @@ class TrackManagerImpl(
 ) : TrackManager {
 
     override fun removeFromSaved(list: List<TrackId>) {
-        api.removeUsersSavedTracks().ids(list.joinToString(",")).build().execute()
+        api.removeUsersSavedTracks(*list.toTypedArray()).build().execute()
     }
 
 }
