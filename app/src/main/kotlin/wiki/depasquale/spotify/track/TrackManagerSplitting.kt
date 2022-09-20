@@ -5,8 +5,8 @@ class TrackManagerSplitting(
 ) : TrackManager {
 
     override fun removeFromSaved(list: List<TrackId>) {
-        for (window in list.windowed(50)) {
-            origin.removeFromSaved(window)
+        for (chunk in list.chunked(50)) {
+            origin.removeFromSaved(chunk)
         }
     }
 
